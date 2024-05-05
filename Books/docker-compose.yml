@@ -13,7 +13,7 @@ services:
   db:
     image: postgres:14
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - postgres_data:/Coding/PostgreeSQL_projects/Books
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
 

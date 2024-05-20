@@ -4,22 +4,20 @@ from django.urls import reverse
 
 class HomePageTests(SimpleTestCase):
 
-    def test_home_page_status(self):
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
+    def setUp(self):
+        url = reverse('home')
+        self.response = self.client.get(url)
+    def test_home_page_status_code(self):
+        self.assertEqual(self.response.status_code, 200)
 
     def test_homepage_url_name(self):
-        response = self.client.get(reverse('home'))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.response.status_code, 200)
 
     def test_home_template(self):
-        response = self.client.get('/')
-        self.assertTemplateUsed(response, 'home.html')
+        self.assertTemplateUsed(self.response, 'home.html')
 
     def test_homepage_contains_correct_html(self):
-        response = self.client.get('/')
-        self.assertContains(response, 'Homepage')
+        self.assertContains(self.response, 'Homepage')
 
     def test_homepage_not_contains_correct_html(self):
-        response = self.client.get('/')
-        self.assertNotContains(response, 'Hi there! I should not be on the page.')
+        self.assertNotContains(self.response, 'Hi there! I should not be on the page.')

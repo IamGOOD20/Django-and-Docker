@@ -14,6 +14,6 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 
-# wsv
-# will@learndjango.com
+# admin
+# admin@gmail.com
 # testpass123

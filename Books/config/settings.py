@@ -50,9 +50,6 @@ INSTALLED_APPS = [
     'allauth.account',
 ]
 
-# django-allauth config
-SITE_ID = 1
-
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -64,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -154,5 +152,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGOUT_REDIRECT_URL = 'home'
+# django-allauth config
 LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT = 'home'
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGOUT_REDIRECT_URL = 'home'

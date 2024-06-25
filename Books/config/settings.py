@@ -162,6 +162,12 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+# account mail verification
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

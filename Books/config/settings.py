@@ -168,3 +168,5 @@ ACCOUNT_UNIQUE_EMAIL = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGOUT_REDIRECT_URL = 'home'
+
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'

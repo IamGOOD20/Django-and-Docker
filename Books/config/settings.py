@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # local
     'accounts',
     'pages',
+    'books',
 
     # 3rd
     'crispy_bootstrap4',

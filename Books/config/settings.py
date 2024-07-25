@@ -142,6 +142,10 @@ STATICFILES_FINDERS = [
 "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -164,7 +168,6 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
